@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http/internal"
+	"github.com/catatsuy/testing/http2/http/internal"
 	"net/textproto"
 	"sort"
 	"strconv"

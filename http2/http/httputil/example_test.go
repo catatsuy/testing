@@ -9,8 +9,8 @@ import (
 	"io/ioutil"
 	"log"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/httptest"
-	"net/http/httputil"
+	"github.com/catatsuy/testing/http2/http/httptest"
+	"github.com/catatsuy/testing/http2/http/httputil"
 	"net/url"
 	"strings"
 )

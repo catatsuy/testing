@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"log"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/cookiejar"
-	"net/http/httptest"
+	"github.com/catatsuy/testing/http2/http/cookiejar"
+	"github.com/catatsuy/testing/http2/http/httptest"
 	"net/url"
 )
 

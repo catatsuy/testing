@@ -13,7 +13,7 @@ import (
 	"io"
 	"net"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/httptest"
+	"github.com/catatsuy/testing/http2/http/httptest"
 	"os"
 	"os/exec"
 	"path/filepath"

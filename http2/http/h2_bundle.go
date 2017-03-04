@@ -31,7 +31,7 @@ import (
 	"log"
 	"math"
 	"net"
-	"net/http/httptrace"
+	"github.com/catatsuy/testing/http2/http/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"

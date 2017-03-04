@@ -12,7 +12,7 @@ import (
 	"io"
 	"io/ioutil"
 	. "github.com/catatsuy/testing/http2/http"
-	"net/http/httptest"
+	"github.com/catatsuy/testing/http2/http/httptest"
 	"strings"
 	"testing"
 )

@@ -13,7 +13,7 @@ import (
 	"io/ioutil"
 	"net"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/cgi"
+	"github.com/catatsuy/testing/http2/http/cgi"
 	"os"
 	"strings"
 	"sync"

@@ -15,7 +15,7 @@ import (
 	"internal/testenv"
 	"io"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/httptest"
+	"github.com/catatsuy/testing/http2/http/httptest"
 	"os"
 	"testing"
 	"time"

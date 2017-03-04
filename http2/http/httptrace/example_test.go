@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"log"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/httptrace"
+	"github.com/catatsuy/testing/http2/http/httptrace"
 )
 
 func Example() {

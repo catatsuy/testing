@@ -15,7 +15,7 @@ import (
 	"mime/multipart"
 	"net"
 	. "github.com/catatsuy/testing/http2/http"
-	"net/http/httptest"
+	"github.com/catatsuy/testing/http2/http/httptest"
 	"net/url"
 	"os"
 	"os/exec"

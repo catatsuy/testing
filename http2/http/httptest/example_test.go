@@ -10,7 +10,7 @@ import (
 	"io/ioutil"
 	"log"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/httptest"
+	"github.com/catatsuy/testing/http2/http/httptest"
 )
 
 func ExampleResponseRecorder() {

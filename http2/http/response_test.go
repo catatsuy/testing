@@ -13,7 +13,7 @@ import (
 	"go/ast"
 	"io"
 	"io/ioutil"
-	"net/http/internal"
+	"github.com/catatsuy/testing/http2/http/internal"
 	"net/url"
 	"reflect"
 	"regexp"

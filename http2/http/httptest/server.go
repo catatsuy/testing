@@ -15,7 +15,7 @@ import (
 	"log"
 	"net"
 	"github.com/catatsuy/testing/http2/http"
-	"net/http/internal"
+	"github.com/catatsuy/testing/http2/http/internal"
 	"os"
 	"sync"
 	"time"
