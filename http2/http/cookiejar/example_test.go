@@ -7,7 +7,7 @@ package cookiejar_test
 import (
 	"fmt"
 	"log"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/http/cookiejar"
 	"net/http/httptest"
 	"net/url"

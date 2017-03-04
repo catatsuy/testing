@@ -21,7 +21,7 @@ import (
 	"log"
 	"math/rand"
 	"net"
-	. "net/http"
+	. "github.com/catatsuy/testing/http2/http"
 	"net/http/httptest"
 	"net/http/httputil"
 	"net/http/internal"

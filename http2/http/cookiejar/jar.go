@@ -9,7 +9,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/url"
 	"sort"
 	"strings"

@@ -11,7 +11,7 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/url"
 	"strings"
 	"sync"

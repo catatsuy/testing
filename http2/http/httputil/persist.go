@@ -9,7 +9,7 @@ import (
 	"errors"
 	"io"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/textproto"
 	"sync"
 )

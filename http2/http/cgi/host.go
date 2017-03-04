@@ -20,7 +20,7 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"os"
 	"os/exec"
 	"path/filepath"

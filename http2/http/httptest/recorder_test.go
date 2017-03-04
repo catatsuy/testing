@@ -7,7 +7,7 @@ package httptest
 import (
 	"fmt"
 	"io"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"testing"
 )
 

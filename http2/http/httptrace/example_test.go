@@ -7,7 +7,7 @@ package httptrace_test
 import (
 	"fmt"
 	"log"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/http/httptrace"
 )
 

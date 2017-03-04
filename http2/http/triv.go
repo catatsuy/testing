@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"os"
 	"os/exec"
 	"strconv"

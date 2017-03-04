@@ -7,7 +7,7 @@ package httptest
 import (
 	"bytes"
 	"io/ioutil"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"strconv"
 	"strings"
 )

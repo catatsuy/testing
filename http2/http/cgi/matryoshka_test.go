@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"internal/testenv"
 	"io"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/http/httptest"
 	"os"
 	"testing"

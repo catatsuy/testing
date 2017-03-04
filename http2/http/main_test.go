@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"os"
 	"runtime"
 	"sort"

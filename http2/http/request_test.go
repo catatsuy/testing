@@ -12,7 +12,7 @@ import (
 	"io"
 	"io/ioutil"
 	"mime/multipart"
-	. "net/http"
+	. "github.com/catatsuy/testing/http2/http"
 	"net/url"
 	"os"
 	"reflect"

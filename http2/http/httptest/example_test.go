@@ -9,7 +9,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/http/httptest"
 )
 

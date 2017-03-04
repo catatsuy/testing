@@ -18,7 +18,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	. "net/http"
+	. "github.com/catatsuy/testing/http2/http"
 	"net/http/cookiejar"
 	"net/http/httptest"
 	"net/url"

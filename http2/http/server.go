@@ -2773,7 +2773,7 @@ func (s *Server) logf(format string, args ...interface{}) {
 //
 //	import (
 //		"io"
-//		"net/http"
+//		"github.com/catatsuy/testing/http2/http"
 //		"log"
 //	)
 //
@@ -2803,7 +2803,7 @@ func ListenAndServe(addr string, handler Handler) error {
 //
 //	import (
 //		"log"
-//		"net/http"
+//		"github.com/catatsuy/testing/http2/http"
 //	)
 //
 //	func handler(w http.ResponseWriter, req *http.Request) {
