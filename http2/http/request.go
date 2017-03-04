@@ -26,9 +26,9 @@ import (
 	"strings"
 	"sync"
 
-	"golang_org/x/net/idna"
-	"golang_org/x/text/unicode/norm"
-	"golang_org/x/text/width"
+	"golang.org/x/net/idna"
+	"golang.org/x/text/unicode/norm"
+	"golang.org/x/text/width"
 )
 
 const (
