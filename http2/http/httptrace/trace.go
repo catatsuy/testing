@@ -9,10 +9,11 @@ package httptrace
 import (
 	"context"
 	"crypto/tls"
-	"internal/nettrace"
 	"net"
 	"reflect"
 	"time"
+
+	"github.com/catatsuy/testing/http2/http/internal/nettrace"
 )
 
 // unique type to prevent assignment.
