@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"fmt"
 	"log"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/url"
 	"time"
 

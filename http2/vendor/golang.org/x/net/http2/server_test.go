@@ -14,7 +14,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/http/httptest"
 	"os"
 	"os/exec"

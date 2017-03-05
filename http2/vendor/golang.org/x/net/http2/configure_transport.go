@@ -9,7 +9,7 @@ package http2
 import (
 	"crypto/tls"
 	"fmt"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 )
 
 func configureTransport(t1 *http.Transport) (*Transport, error) {

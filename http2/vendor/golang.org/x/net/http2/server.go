@@ -35,7 +35,7 @@ import (
 	"log"
 	"math"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/textproto"
 	"net/url"
 	"os"

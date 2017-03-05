@@ -9,7 +9,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"os/exec"
 	"strconv"
 	"strings"

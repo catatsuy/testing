@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"reflect"
 	"strconv"
 	"sync"

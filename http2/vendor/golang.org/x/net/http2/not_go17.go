@@ -9,7 +9,7 @@ package http2
 import (
 	"crypto/tls"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"time"
 )
 

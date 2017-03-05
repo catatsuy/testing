@@ -22,7 +22,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"os"
 	"sort"
 	"strconv"

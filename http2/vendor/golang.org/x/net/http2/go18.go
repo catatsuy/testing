@@ -9,7 +9,7 @@ package http2
 import (
 	"crypto/tls"
 	"io"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 )
 
 func cloneTLSConfig(c *tls.Config) *tls.Config { return c.Clone() }

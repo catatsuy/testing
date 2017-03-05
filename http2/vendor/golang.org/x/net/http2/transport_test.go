@@ -15,7 +15,7 @@ import (
 	"io/ioutil"
 	"math/rand"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"net/url"
 	"os"
 	"reflect"

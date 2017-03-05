@@ -19,7 +19,7 @@ import (
 	"log"
 	"math"
 	"net"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 	"sort"
 	"strconv"
 	"strings"

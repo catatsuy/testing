@@ -8,7 +8,7 @@ package http2
 
 import (
 	"io"
-	"net/http"
+	"github.com/catatsuy/testing/http2/http"
 )
 
 func configureServer18(h1 *http.Server, h2 *Server) error {
