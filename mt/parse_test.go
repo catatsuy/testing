@@ -26,10 +26,18 @@ EXTENDED BODY:
 -----
 `)
 
+	expected := &MT{
+		Author: "catatsuy",
+		Title:  "ポエム",
+	}
+
 	m := &MT{}
 	m.Parse(buf)
 
-	if m.Author != "catatsuy" {
-		t.Errorf("Cannot parse author column: %s", m.Author)
+	if m.Author != expected.Author {
+		t.Errorf("expected author column %s; got %s", expected.Author, m.Author)
+	}
+	if m.Title != expected.Title {
+		t.Errorf("expected title column %s; got %s", expected.Title, m.Title)
 	}
 }

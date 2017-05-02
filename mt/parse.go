@@ -8,6 +8,7 @@ import (
 
 type MT struct {
 	Author string
+	Title  string
 }
 
 func (m *MT) Parse(r io.Reader) {
@@ -18,8 +19,15 @@ func (m *MT) Parse(r io.Reader) {
 		if len(ss) <= 1 {
 			continue
 		}
-		if ss[0] == "AUTHOR" {
-			m.Author = ss[1]
+		key, value := ss[0], ss[1]
+
+		switch key {
+		case "AUTHOR":
+			m.Author = value
+			break
+		case "TITLE":
+			m.Title = value
+			break
 		}
 	}
 }
