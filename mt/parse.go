@@ -7,8 +7,9 @@ import (
 )
 
 type MT struct {
-	Author string
-	Title  string
+	Author   string
+	Title    string
+	Basename string
 }
 
 func (m *MT) Parse(r io.Reader) {
@@ -27,6 +28,9 @@ func (m *MT) Parse(r io.Reader) {
 			break
 		case "TITLE":
 			m.Title = value
+			break
+		case "BASENAME":
+			m.Basename = value
 			break
 		}
 	}

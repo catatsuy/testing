@@ -27,8 +27,9 @@ EXTENDED BODY:
 `)
 
 	expected := &MT{
-		Author: "catatsuy",
-		Title:  "ポエム",
+		Author:   "catatsuy",
+		Title:    "ポエム",
+		Basename: "poem",
 	}
 
 	m := &MT{}
@@ -39,5 +40,8 @@ EXTENDED BODY:
 	}
 	if m.Title != expected.Title {
 		t.Errorf("expected title column %s; got %s", expected.Title, m.Title)
+	}
+	if m.Basename != expected.Basename {
+		t.Errorf("expected title column %s; got %s", expected.Basename, m.Basename)
 	}
 }
