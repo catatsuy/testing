@@ -2,6 +2,7 @@ package mt_test
 
 import (
 	"bytes"
+	"reflect"
 	"testing"
 
 	. "github.com/catatsuy/testing/mt"
@@ -35,13 +36,7 @@ EXTENDED BODY:
 	m := &MT{}
 	m.Parse(buf)
 
-	if m.Author != expected.Author {
-		t.Errorf("expected author column %s; got %s", expected.Author, m.Author)
-	}
-	if m.Title != expected.Title {
-		t.Errorf("expected title column %s; got %s", expected.Title, m.Title)
-	}
-	if m.Basename != expected.Basename {
-		t.Errorf("expected title column %s; got %s", expected.Basename, m.Basename)
+	if !reflect.DeepEqual(m, expected) {
+		t.Errorf("Error parsing, expected %q; got %q", expected, m)
 	}
 }
