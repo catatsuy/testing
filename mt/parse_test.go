@@ -28,15 +28,30 @@ EXTENDED BODY:
 `)
 
 	expected := &MT{
-		Author:   "catatsuy",
-		Title:    "ポエム",
-		Basename: "poem",
+		Author:        "catatsuy",
+		Title:         "ポエム",
+		Basename:      "poem",
+		Status:        "Publish",
+		AllowComments: 1,
 	}
 
-	m := &MT{}
-	m.Parse(buf)
+	m, err := Parse(buf)
+
+	if err != nil {
+		t.Fatalf("got error %q", err)
+	}
 
 	if !reflect.DeepEqual(m, expected) {
 		t.Errorf("Error parsing, expected %q; got %q", expected, m)
+	}
+}
+
+func TestParseStatusNotAllowed(t *testing.T) {
+	buf := bytes.NewBufferString(`STATUS: Published`)
+
+	_, err := Parse(buf)
+
+	if err == nil || err.Error() != "STATUS column is allowed only Draft or Publish or Future. Got Published" {
+		t.Errorf("Error parsing, got %q", err)
 	}
 }
