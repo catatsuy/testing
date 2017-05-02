@@ -10,16 +10,33 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Default
+const (
+	// If it is not inialized, AllowComments is -1
+	DefaultAllowComments = -1
+)
+
+// Movable Type Import Format
 type MT struct {
-	Author        string
-	Title         string
-	Basename      string
-	Status        string
+	Author   string
+	Title    string
+	Basename string
+	Status   string
+
+	// 0 or 1. If it is not inialized DefaultAllowComments.
 	AllowComments int
 }
 
+// NewMT creates MT.
+func NewMT() *MT {
+	return &MT{
+		AllowComments: DefaultAllowComments,
+	}
+}
+
+// Parse creates MT struct from io.Reader
 func Parse(r io.Reader) (*MT, error) {
-	m := &MT{}
+	m := NewMT()
 
 	scanner := bufio.NewScanner(r)
 

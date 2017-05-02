@@ -55,3 +55,11 @@ func TestParseStatusNotAllowed(t *testing.T) {
 		t.Errorf("Error parsing, got %q", err)
 	}
 }
+
+func TestNewMT(t *testing.T) {
+	m := NewMT()
+
+	if m.AllowComments != DefaultAllowComments {
+		t.Errorf("By default, AllowComments is -1")
+	}
+}
