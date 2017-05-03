@@ -49,6 +49,7 @@ BODY:
 EXTENDED BODY:
 <p>extended body body body</p>
 -----
+--------
 `)
 
 	expected := []*MT{
@@ -108,15 +109,15 @@ func TestParseDate(t *testing.T) {
 		t   time.Time
 	}{
 		{
-			bytes.NewBufferString(`DATE: 04/22/2017 08:41:58 PM`),
+			bytes.NewBufferString("DATE: 04/22/2017 08:41:58 PM\n--------\n"),
 			time.Date(2017, time.April, 22, 20, 41, 58, 0, time.UTC),
 		},
 		{
-			bytes.NewBufferString(`DATE: 04/22/2017 08:41:58 AM`),
+			bytes.NewBufferString("DATE: 04/22/2017 08:41:58 AM\n--------\n"),
 			time.Date(2017, time.April, 22, 8, 41, 58, 0, time.UTC),
 		},
 		{
-			bytes.NewBufferString(`DATE: 04/22/2017 20:41:58`),
+			bytes.NewBufferString("DATE: 04/22/2017 20:41:58\n--------\n"),
 			time.Date(2017, time.April, 22, 20, 41, 58, 0, time.UTC),
 		},
 	}
@@ -129,7 +130,7 @@ func TestParseDate(t *testing.T) {
 		}
 
 		if mts[0].Date != ft.t {
-			t.Errorf("m.Date got %v; want %v", mts[0].Date)
+			t.Errorf("m.Date got %v; want %v", mts[0].Date, ft.t)
 		}
 	}
 }

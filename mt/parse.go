@@ -167,7 +167,5 @@ func Parse(r io.Reader) ([]*MT, error) {
 		}
 	}
 
-	mts = append(mts, m)
-
 	return mts, nil
 }
