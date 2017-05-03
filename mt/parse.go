@@ -36,6 +36,14 @@ type MT struct {
 	ConvertBreaks string
 
 	Date time.Time
+
+	PrimaryCategory string
+
+	Category []string
+
+	Body string
+
+	ExtendedBody string
 }
 
 // NewMT creates MT.
@@ -56,7 +64,39 @@ func Parse(r io.Reader) (*MT, error) {
 
 	for scanner.Scan() {
 		ss := strings.Split(scanner.Text(), ": ")
+
 		if len(ss) <= 1 {
+			value := ss[0]
+
+			if value == "-----" {
+				continue
+			}
+
+			switch value {
+			case "BODY:":
+				for scanner.Scan() {
+					line := scanner.Text()
+
+					if line == "-----" {
+						break
+					}
+
+					m.Body += line + "\n"
+				}
+				break
+			case "EXTENDED BODY:":
+				for scanner.Scan() {
+					line := scanner.Text()
+
+					if line == "-----" {
+						break
+					}
+
+					m.ExtendedBody += line + "\n"
+				}
+				break
+			}
+
 			continue
 		}
 		key, value := ss[0], ss[1]
@@ -108,6 +148,12 @@ func Parse(r io.Reader) (*MT, error) {
 			if err != nil {
 				return nil, errors.Wrap(err, "Parsing error on DATE column")
 			}
+			break
+		case "PRIMARY CATEGORY":
+			m.PrimaryCategory = value
+			break
+		case "CATEGORY":
+			m.Category = append(m.Category, value)
 			break
 		}
 	}

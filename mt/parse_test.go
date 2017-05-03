@@ -19,26 +19,35 @@ ALLOW COMMENTS: 1
 ALLOW PINGS: 1
 CONVERT BREAKS: 0
 DATE: 04/22/2017 20:41:58
+PRIMARY CATEGORY: ブログ
 CATEGORY: ポエム
 CATEGORY: 技術系
 -----
 BODY:
+<p>body</p>
 <p>bodybody</p>
+<p>bodybodybody</p>
 -----
 EXTENDED BODY:
+<p>extended body</p>
+<p>extended body body</p>
 <p>extended body body body</p>
 -----
 `)
 
 	expected := &MT{
-		Author:        "catatsuy",
-		Title:         "ポエム",
-		Basename:      "poem",
-		Status:        "Publish",
-		AllowComments: 1,
-		AllowPings:    1,
-		ConvertBreaks: "0",
-		Date:          time.Date(2017, time.April, 22, 20, 41, 58, 0, time.UTC),
+		Author:          "catatsuy",
+		Title:           "ポエム",
+		Basename:        "poem",
+		Status:          "Publish",
+		AllowComments:   1,
+		AllowPings:      1,
+		ConvertBreaks:   "0",
+		Date:            time.Date(2017, time.April, 22, 20, 41, 58, 0, time.UTC),
+		PrimaryCategory: "ブログ",
+		Category:        []string{"ポエム", "技術系"},
+		Body:            "<p>body</p>\n<p>bodybody</p>\n<p>bodybodybody</p>\n",
+		ExtendedBody:    "<p>extended body</p>\n<p>extended body body</p>\n<p>extended body body body</p>\n",
 	}
 
 	m, err := Parse(buf)
