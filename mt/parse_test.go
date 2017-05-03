@@ -33,6 +33,22 @@ EXTENDED BODY:
 <p>extended body body</p>
 <p>extended body body body</p>
 -----
+--------
+AUTHOR: catatsuy
+TITLE: 風邪で声を失った話
+BASENAME: 2017/04/09/194939
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 04/09/2017 07:49:39 PM
+CATEGORY: 日常
+-----
+BODY:
+<p>bodybodybody</p>
+-----
+EXTENDED BODY:
+<p>extended body body body</p>
+-----
 `)
 
 	expected := []*MT{
@@ -49,6 +65,19 @@ EXTENDED BODY:
 			Category:        []string{"ポエム", "技術系"},
 			Body:            "<p>body</p>\n<p>bodybody</p>\n<p>bodybodybody</p>\n",
 			ExtendedBody:    "<p>extended body</p>\n<p>extended body body</p>\n<p>extended body body body</p>\n",
+		},
+		&MT{
+			Author:        "catatsuy",
+			Title:         "風邪で声を失った話",
+			Basename:      "2017/04/09/194939",
+			Status:        "Publish",
+			AllowComments: 1,
+			AllowPings:    -1,
+			ConvertBreaks: "0",
+			Date:          time.Date(2017, time.April, 9, 19, 49, 39, 0, time.UTC),
+			Category:      []string{"日常"},
+			Body:          "<p>bodybodybody</p>\n",
+			ExtendedBody:  "<p>extended body body body</p>\n",
 		},
 	}
 
