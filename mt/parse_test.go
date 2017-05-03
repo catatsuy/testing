@@ -35,29 +35,31 @@ EXTENDED BODY:
 -----
 `)
 
-	expected := &MT{
-		Author:          "catatsuy",
-		Title:           "ポエム",
-		Basename:        "poem",
-		Status:          "Publish",
-		AllowComments:   1,
-		AllowPings:      1,
-		ConvertBreaks:   "0",
-		Date:            time.Date(2017, time.April, 22, 20, 41, 58, 0, time.UTC),
-		PrimaryCategory: "ブログ",
-		Category:        []string{"ポエム", "技術系"},
-		Body:            "<p>body</p>\n<p>bodybody</p>\n<p>bodybodybody</p>\n",
-		ExtendedBody:    "<p>extended body</p>\n<p>extended body body</p>\n<p>extended body body body</p>\n",
+	expected := []*MT{
+		&MT{
+			Author:          "catatsuy",
+			Title:           "ポエム",
+			Basename:        "poem",
+			Status:          "Publish",
+			AllowComments:   1,
+			AllowPings:      1,
+			ConvertBreaks:   "0",
+			Date:            time.Date(2017, time.April, 22, 20, 41, 58, 0, time.UTC),
+			PrimaryCategory: "ブログ",
+			Category:        []string{"ポエム", "技術系"},
+			Body:            "<p>body</p>\n<p>bodybody</p>\n<p>bodybodybody</p>\n",
+			ExtendedBody:    "<p>extended body</p>\n<p>extended body body</p>\n<p>extended body body body</p>\n",
+		},
 	}
 
-	m, err := Parse(buf)
+	mts, err := Parse(buf)
 
 	if err != nil {
 		t.Fatalf("got error %q", err)
 	}
 
-	if !reflect.DeepEqual(m, expected) {
-		t.Errorf("Error parsing, expected %q; got %q", expected, m)
+	if !reflect.DeepEqual(mts, expected) {
+		t.Errorf("Error parsing, expected %q; got %q", expected, mts)
 	}
 }
 
@@ -91,14 +93,14 @@ func TestParseDate(t *testing.T) {
 	}
 
 	for _, ft := range featuretests {
-		m, err := Parse(ft.buf)
+		mts, err := Parse(ft.buf)
 
 		if err != nil {
 			t.Fatalf("got error %q", err)
 		}
 
-		if m.Date != ft.t {
-			t.Errorf("m.Date got %v; want %v", m.Date)
+		if mts[0].Date != ft.t {
+			t.Errorf("m.Date got %v; want %v", mts[0].Date)
 		}
 	}
 }

@@ -55,18 +55,26 @@ func NewMT() *MT {
 }
 
 // Parse creates MT struct from io.Reader
-func Parse(r io.Reader) (*MT, error) {
-	m := NewMT()
+func Parse(r io.Reader) ([]*MT, error) {
+	mts := []*MT{}
 
 	scanner := bufio.NewScanner(r)
 
 	var err error
+
+	m := NewMT()
 
 	for scanner.Scan() {
 		ss := strings.Split(scanner.Text(), ": ")
 
 		if len(ss) <= 1 {
 			value := ss[0]
+
+			if value == "--------" {
+				mts = append(mts, m)
+				m = NewMT()
+				continue
+			}
 
 			if value == "-----" {
 				continue
@@ -99,6 +107,7 @@ func Parse(r io.Reader) (*MT, error) {
 
 			continue
 		}
+
 		key, value := ss[0], ss[1]
 
 		switch key {
@@ -158,5 +167,7 @@ func Parse(r io.Reader) (*MT, error) {
 		}
 	}
 
-	return m, nil
+	mts = append(mts, m)
+
+	return mts, nil
 }
